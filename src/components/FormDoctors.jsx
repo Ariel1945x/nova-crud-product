@@ -101,7 +101,7 @@ const FormDoctors = () => {
                         <li key={doctor.id}>
                             {doctor.firstName} {doctor.lastName} {doctor.speciality?.speDoc}<br />
                             {doctor.descript}<br />
-                            <img src={doctor.images[0].url} style={{width: 200, height: 300}}/><br />
+                            <img src={doctor.images[0]?.url} style={{width: 200, height: 300}}/><br />
                             <button onClick={() => editDocotors(doctor)}>Edit ✍️</button>
                             <button onClick={() => deleteDoctors(doctor.id)}>Borrar 🚮</button>
                         </li>

@@ -13,28 +13,28 @@ export const specialitySlice = createSlice({
 
 export const thunkGetSpecialities = () => (dispatch) => {
     return axios
-        .get(`http://localhost:8080/specialities`)
+        .get(`postgres://nova_db_product_start_user:FS07BRAdXvTOuSnkntElRj6OlGzI7Z1y@dpg-cl6pk18icrhc73ct2dmg-a.oregon-postgres.render.com/nova_db_product_start/specialities`)
         .then(resp => dispatch(setSpecialities(resp.data)))
         .catch(error => console.log(error))
 }
 
 export const thunkPostSpecialities = (data) => (dispatch) => {
     return axios
-        .post(`http://localhost:8080/specialities`, data)
+        .post(`postgres://nova_db_product_start_user:FS07BRAdXvTOuSnkntElRj6OlGzI7Z1y@dpg-cl6pk18icrhc73ct2dmg-a.oregon-postgres.render.com/nova_db_product_start/specialities`, data)
         .then(() => dispatch(thunkGetSpecialities()))
         .catch(error => console.log(error))
 }
 
 export const thunkPutSpecialities = (id, data) => (dispatch) => {
     return axios
-        .put(`http://localhost:8080/specialities/${id}`, data)
+        .put(`postgres://nova_db_product_start_user:FS07BRAdXvTOuSnkntElRj6OlGzI7Z1y@dpg-cl6pk18icrhc73ct2dmg-a.oregon-postgres.render.com/nova_db_product_start/specialities/${id}`, data)
         .then(() => dispatch(thunkGetSpecialities()))
         .catch(error => console.log(error))
 }
 
 export const thunkDeleteSpecialities = id => (dispatch) => {
     return axios
-        .delete(`http://localhost:8080/specialities/${id}`)
+        .delete(`postgres://nova_db_product_start_user:FS07BRAdXvTOuSnkntElRj6OlGzI7Z1y@dpg-cl6pk18icrhc73ct2dmg-a.oregon-postgres.render.com/nova_db_product_start/specialities/${id}`)
         .then(() => dispatch(thunkGetSpecialities()))
         .catch(error => console.log(error))
 }

@@ -13,28 +13,28 @@ export const doctorSlice = createSlice({
 
 export const thunkGetDoctors = () => (dispatch) => {
     return axios
-        .get(`postgres://nova_db_product_start_user:FS07BRAdXvTOuSnkntElRj6OlGzI7Z1y@dpg-cl6pk18icrhc73ct2dmg-a.oregon-postgres.render.com/nova_db_product_start/doctors`)
+        .get(`https://nova-db-product-start.onrender.com/doctors`)
         .then(resp => dispatch(setListOfDoctors(resp.data)))
         .catch(error => console.log(error))
 }
 
 export const thunkPostDoctors = (body) => (dispatch) => {
     return axios
-        .post(`postgres://nova_db_product_start_user:FS07BRAdXvTOuSnkntElRj6OlGzI7Z1y@dpg-cl6pk18icrhc73ct2dmg-a.oregon-postgres.render.com/nova_db_product_start/doctors`, body)
+        .post(`https://nova-db-product-start.onrender.com/doctors`, body)
         .then(() => dispatch(thunkGetDoctors()))
         .catch(error => console.log(error))
 }
 
 export const thunkPutDoctors = (id, body) => (dispatch) => {
     return axios
-        .put(`postgres://nova_db_product_start_user:FS07BRAdXvTOuSnkntElRj6OlGzI7Z1y@dpg-cl6pk18icrhc73ct2dmg-a.oregon-postgres.render.com/nova_db_product_start/doctors/${id}`, body)
+        .put(`https://nova-db-product-start.onrender.com/doctors/${id}`, body)
         .then(() => dispatch(thunkGetDoctors()))
         .catch(error => console.log(error))
 }
 
 export const thunkDeleteDoctors = (id) => (dispatch) => {
     return axios
-        .delete(`postgres://nova_db_product_start_user:FS07BRAdXvTOuSnkntElRj6OlGzI7Z1y@dpg-cl6pk18icrhc73ct2dmg-a.oregon-postgres.render.com/nova_db_product_start/doctors/${id}`)
+        .delete(`https://nova-db-product-start.onrender.com/doctors/${id}`)
         .then(resp => dispatch(setListOfDoctors(resp.data)))
         .catch(error => console.log(error))
 }

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 
 const Specialities = () => {
     return (
-        <section>
-            <h1>Specialities</h1>
-            <Link to='/'>Raíz</Link>
+        <section className="spe_sec">
+            <h1 className="spe_h1">Specialities</h1>
+            <Link className="spe_link" to='/'>Raíz</Link>
             <FormSpeciality/>
         </section>
     )

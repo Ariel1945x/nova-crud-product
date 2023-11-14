@@ -11,11 +11,13 @@ function App() {
   return (
     <>
     <HashRouter>
-      <Routes>
-        <Route path='/' element={<Raiz/>} />
-        <Route path='/doctors' element={<Doctors/>} />
-        <Route path='/specialities' element={<Specialities/>} />
-      </Routes>
+
+        <Routes>
+          <Route path='/' element={<Raiz/>} />
+          <Route path='/doctors' element={<Doctors/>} />
+          <Route path='/specialities' element={<Specialities/>} />
+        </Routes>
+
     </HashRouter>
     </>
   )

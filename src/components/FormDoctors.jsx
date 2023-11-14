@@ -55,32 +55,32 @@ const FormDoctors = () => {
     }
 
     return (
-        <section>
-            <form onSubmit={handleSubmit(submit)}>
+        <section className="formdoc_sec">
+            <form className="formdoc_form" onSubmit={handleSubmit(submit)}>
 
-                <label htmlFor="firstName">Nombre</label>
-                <input 
+                <label className="formdoc_label" htmlFor="firstName">Nombre</label>
+                <input className="formdoc_input" 
                 type="text" 
                 id="firstName"
                 {...register("firstName", {required: true})}
                 />
 
-                <label htmlFor="lastName">Apellido</label>
-                <input 
+                <label className="formdoc_label" htmlFor="lastName">Apellido</label>
+                <input className="formdoc_input" 
                 type="text" 
                 id="lastName"
                 {...register("lastName", {required: true})}
                 />
 
-                <label htmlFor="descript">Descripción </label>
-                <input 
+                <label className="formdoc_label" htmlFor="descript">Descripción </label>
+                <input className="formdoc_input" 
                 type="text"
                 id="descript"
                 {...register("descript", {required: true})}
                 />
 
-                <label htmlFor="specialityId">Especialidad</label>
-                <select 
+                <label className="formdoc_label" htmlFor="specialityId">Especialidad</label>
+                <select className="formdoc_input" 
                 id="specialityId"
                 {...register("specialityId", {required: true})}
                 >
@@ -90,20 +90,26 @@ const FormDoctors = () => {
                 }
                 </select>
 
-                <button>Crear</button>
+                <button className="formdoc_btn">Crear</button>
 
             </form>
 
-            <section>
-                <ul>
+            <section className="formdoc_sec-one">
+                <ul className="formdoc_ul">
                 {
                     doctors.map(doctor => (
-                        <li key={doctor.id}>
-                            {doctor.firstName} {doctor.lastName} {doctor.speciality?.speDoc}<br />
-                            {doctor.descript}<br />
-                            <img src={doctor.images[0]?.url} style={{width: 200, height: 300}}/><br />
-                            <button onClick={() => editDocotors(doctor)}>Edit ✍️</button>
-                            <button onClick={() => deleteDoctors(doctor.id)}>Borrar 🚮</button>
+                        <li className="formdoc_li" key={doctor.id}>
+
+                            {doctor.firstName} <br /> {doctor.lastName} <br /> {doctor.speciality?.speDoc}<br />
+                            <span>{doctor.descript}</span>
+
+                            <img className="formdoc_img" src={doctor.images[0]?.url}/><br />
+
+                            <div className="formdoc_div">
+                                <button className="formdoc_btn-one" onClick={() => editDocotors(doctor)}>Edit ✍️</button>
+                                <button className="formdoc_btn-two" onClick={() => deleteDoctors(doctor.id)}>Borrar 🚮</button>    
+                            </div>
+
                         </li>
                     ))
                 }

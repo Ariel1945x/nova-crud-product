@@ -1,0 +1,256 @@
+:root {
+    --background-one: #FFA500;
+    --background-two: #2E8B57;
+    --hover-color-one: #9BCD9B;
+    --hover-color-two: #ffba3a;
+    --color-shine: #FFFFFF;
+    --color-default:  #080808;
+    --update: rgba(44, 64, 248, 0.851);
+    --delete: rgba(255, 8, 8, 0.851);
+} 
+
+body {
+    font-family: 'Dosis', 'Lato', 'Nunito', 'Sen', sans-serif;
+    margin: 2rem;
+    background-color: var(--color-default);
+}
+
+.raiz_h1, .spe_h1, .doc_h1 {
+    font-size: 30px;
+    color: var(--hover-color-two);
+}
+
+.raiz_sec-one {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.raiz_link, .spe_link, .doc_link {
+    color: var(--hover-color-two);
+    text-decoration: none;
+    transition: .5s;
+    font-size: 25px;
+}
+
+.raiz_link:hover, .spe_link:hover, .doc_link:hover {
+    color: var(--hover-color-one);
+    font-size: 25px;
+}
+
+.raiz_p {
+    margin-top: 5rem;
+    color: #ffba3a;
+    font-size: 18px;
+}
+
+
+/* speciality */
+
+.spe_sec, .doc_sec {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.spe_link {
+    width: 80px;
+}
+
+/* form speciality */
+
+.formspe_sec, .formdoc_sec {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.formspe_form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.formspe_label, .formdoc_label {
+    font-size: 20px;
+    color: var(--hover-color-two);
+}
+
+.formspe_input, .formdoc_input {
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    padding-left: 1rem;
+    font-size: 20px;
+    background-color: var(--background-one);
+    border-left: 2px solid var(--background-one);
+    border-bottom: 2px solid var(--background-one);
+    cursor: pointer;
+    transition: .5s;
+    outline: none;
+}
+
+.formspe_input:hover, .formdoc_input:hover {
+    background-color: var(--background-two);
+    border-left: 2px solid var(--background-two);
+    border-bottom: 2px solid var(--background-two);
+}
+
+.formspe_btn, .formdoc_btn {
+    border: none;
+    border-radius: 10px;
+    background-color: var(--background-one);
+    height: 25px;
+    font-size: 20px;
+    width: 150px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.formspe_btn:hover, .formdoc_btn:hover {
+    background-color: var(--background-two);
+}
+
+.formspe_ul, .formdoc_ul {
+    list-style: none;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.formspe_ul > :nth-child(even), .formdoc_ul > :nth-child(even) {
+    background-color: var(--background-one);
+}
+
+.formspe_ul > :nth-child(odd), .formdoc_ul > :nth-child(odd) {
+    background-color: var(--background-two);
+}
+
+.formspe_li, .formdoc_li {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    padding: 1rem;
+}
+
+.formspe_btn-one {
+    border: none;
+    border-radius: 15px;
+    height: 30px;
+    width: 100px;
+    background-color: var(--update);
+    font-size: 15px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.formspe_btn-two{
+    border: none;
+    border-radius: 15px;
+    height: 30px;
+    width: 100px;
+    background-color: var(--delete);
+    font-size: 15px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* form doctor */
+
+.formdoc_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+span {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.formdoc_img {
+    width: 90px;
+    height: 90px;
+}
+
+.formdoc_btn-one {
+    border: none;
+    border-radius: 15px;
+    height: 30px;
+    width: 100px;
+    background-color: var(--update);
+    font-size: 15px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.formdoc_btn-two {
+    border: none;
+    border-radius: 15px;
+    height: 30px;
+    width: 100px;
+    background-color: var(--delete);
+    font-size: 15px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+/* querry one */
+
+@media screen and (min-width: 700px) and (max-width: 1023px) {
+    .formdoc_form, .formspe_form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .formdoc_img{
+        width: 80px;
+    }
+
+    .formdoc_div {
+        width: 150px;
+        height: 100px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .formdoc_sec, .formspe_sec {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formdoc_form, .formspe_form {
+        width: 900px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .formdoc_img{
+        width: 80px;
+    }
+
+    .formdoc_div {
+        width: 150px;
+        height: 100px;
+    }
+
+    .formdoc_sec-one, .formspe_sec-one {
+        width: 900px;
+    }
+}

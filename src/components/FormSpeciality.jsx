@@ -44,29 +44,32 @@ const FormSpeciality = () => {
     }
 
     return (
-        <section>
-            <form onSubmit={handleSubmit(submit)}>
+        <section className="formspe_sec">
+            <form onSubmit={handleSubmit(submit)} className="formspe_form">
 
-                <label htmlFor="speDoc">Especialidad</label>
+                <label className="formspe_label" htmlFor="speDoc">Especialidad</label>
                 <input 
+                className="formspe_input"
                 type="text" 
                 id="speDoc"
                 name="speDoc"
                 {...register("speDoc", {required: true})}
                 />
 
-                <button>Crear</button>
+                <button className="formspe_btn">Crear</button>
 
             </form>
 
-            <section>
-                <ul>
+            <section className="formspe_sec-one">
+                <ul className="formspe_ul">
                     {
                         specialities?.map(speciality => (
-                            <li key={speciality.id}>
+                            <li className="formspe_li" key={speciality.id}>
                                 {speciality.speDoc} <br />
-                                <button onClick={() => sendToInfo(speciality)}>Editar ✍️</button>
-                                <button onClick={() => deleteInfo(speciality.id)}>Borrar 🚮</button>
+                                <div className="formspe_div">
+                                    <button className="formspe_btn-one" onClick={() => sendToInfo(speciality)}>Editar ✍️</button>
+                                    <button className="formspe_btn-two" onClick={() => deleteInfo(speciality.id)}>Borrar 🚮</button>
+                                </div>
                             </li>
                         ))
                     }

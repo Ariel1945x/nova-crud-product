@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const Doctors = () => {
     return (
         <section className="doc_sec">
-            <h1 className="doc_h1">Doctors</h1>
+            <h1 className="doc_h1">Doctores</h1>
             <Link className="doc_link" to='/'>Raíz</Link>
             <FormDoctors/>
         </section>

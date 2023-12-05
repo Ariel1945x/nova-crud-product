@@ -100,10 +100,15 @@ const FormDoctors = () => {
                     doctors.map(doctor => (
                         <li className="formdoc_li" key={doctor.id}>
 
-                            {doctor.firstName} <br /> {doctor.lastName} <br /> {doctor.speciality?.speDoc}<br />
-                            <span>{doctor.descript}</span>
+                            <div className="formdoc_div-img">
+                                <img className="formdoc_img" src={doctor.images[0]?.url}/>
+                            </div>
 
-                            <img className="formdoc_img" src={doctor.images[0]?.url}/><br />
+                            <div className="formdoc_div-text">
+                                Nombre: {doctor.firstName} {doctor.lastName}
+                                <br />Especialidad: {doctor.speciality?.speDoc}
+                                <br />Detalle: {doctor.descript}
+                            </div>
 
                             <div className="formdoc_div">
                                 <button className="formdoc_btn-one" onClick={() => editDocotors(doctor)}>Edit ✍️</button>

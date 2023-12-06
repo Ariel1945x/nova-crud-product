@@ -35,7 +35,7 @@ export const thunkPutDoctors = (id, body) => (dispatch) => {
 export const thunkDeleteDoctors = (id) => (dispatch) => {
     return axios
         .delete(`https://nova-db-product-start.onrender.com/doctors/${id}`)
-        .then(resp => dispatch(thunkGetDoctors()))
+        .then(() => dispatch(thunkGetDoctors()))
         .catch(error => console.log(error))
 }
 

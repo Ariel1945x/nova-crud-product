@@ -17,6 +17,8 @@ const FormDoctors = () => {
     const specialities = useSelector(state => state.listOfSpecialities)
     const [ doctorEdit, setDoctorEdit ] = useState(null)
 
+    console.log(doctors);
+
     useEffect(() => {
         if (doctorEdit) {
             reset({
@@ -97,7 +99,7 @@ const FormDoctors = () => {
             <section className="formdoc_sec-one">
                 <ul className="formdoc_ul">
                 {
-                    doctors.map(doctor => (
+                    doctors?.map(doctor => (
                         <li className="formdoc_li" key={doctor.id}>
 
                             <div className="formdoc_div-img">
